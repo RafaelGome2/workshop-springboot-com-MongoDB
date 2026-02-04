@@ -3,7 +3,7 @@ package com.example.workshopmongo.dto;
 import java.io.Serializable;
 
 import org.springframework.data.annotation.Id;
-
+// aula 349 04/02/2026
 import com.example.workshopmongo.domain.User;
 
 public class UserDTO implements Serializable{
