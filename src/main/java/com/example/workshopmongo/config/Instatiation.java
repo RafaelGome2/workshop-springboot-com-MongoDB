@@ -18,9 +18,9 @@ public class Instatiation implements CommandLineRunner  {
 	@Override
 	public void run(String... args) throws Exception {
 		 userRepo.deleteAll();
-		 User maria = new User(null, "Maria brown", "maria@gmail.com");
-		 User alex= new User(null, "Alex green","alex@gmail.com");
-		 User bob= new User(null, "Bob Grey", "bob@gmail.com");
+		 User maria = new User("Maria brown", null, "maria@gmail.com");
+		 User alex= new User("Alex green",null, "alex@gmail.com");
+		 User bob= new User("Bob Grey",null,  "bob@gmail.com");
 		
 		 userRepo.saveAll(Arrays.asList(maria, alex,bob));
 
