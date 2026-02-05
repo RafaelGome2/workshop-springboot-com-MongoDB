@@ -8,6 +8,7 @@ import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.example.workshopmongo.domain.User;
+import com.example.workshopmongo.dto.UserDTO;
 import com.example.workshopmongo.repository.UserRepository;
 import com.example.workshopmongo.services.exception.ObjectNotFoundException;
 
@@ -28,4 +29,13 @@ public class UserService {
   	}
   	return user.get();
   }
+  //aula 351 5/2/2026
+  public User insert(User obj) {
+  	return repo.insert(obj);
+  }
+  public User fromDTO(UserDTO objDto) {
+  	return new User(objDto.getName(), objDto.getId(), objDto.getEmail());
+  	
+  }
+  
 }
