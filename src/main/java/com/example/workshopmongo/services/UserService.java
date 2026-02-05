@@ -21,21 +21,27 @@ public class UserService {
  public List<User> findAll(){
 	 return repo.findAll();
  }
+ 
  //metodo que procura por id, caso não encontrado lança a exceção abaixo
   public User findById(String id) {
   	Optional<User> user = repo.findById(id); 
   	if(user.isEmpty()) {
   		throw new ObjectNotFoundException("Objeto nao encontrado");
   	}
-  	return user.get();
-  }
+  	return user.get(); }
+  
   //aula 351 5/2/2026
   public User insert(User obj) {
   	return repo.insert(obj);
   }
   public User fromDTO(UserDTO objDto) {
   	return new User(objDto.getName(), objDto.getId(), objDto.getEmail());
-  	
+  	  }
+  
+  //aula 352 5/2/2026
+  public void delete(String id) {
+  	findById(id);
+  	repo.deleteById(id);
   }
   
 }

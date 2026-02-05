@@ -59,6 +59,11 @@ public class User implements Serializable {
 		return false;
 	User other = (User) obj;
 	return Objects.equals(id, other.id);
+ }
+
+ @Override
+ public String toString() {
+	return "User [name=" + name + ", id=" + id + ", email=" + email + "]";
  };
  
 }
