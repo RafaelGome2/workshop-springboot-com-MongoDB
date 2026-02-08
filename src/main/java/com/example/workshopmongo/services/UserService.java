@@ -18,6 +18,7 @@ public class UserService {
 	@Autowired
 	private UserRepository repo;
 
+
 	public List<User> findAll() {
 		return repo.findAll();
 	}
@@ -57,6 +58,5 @@ public class UserService {
 		newObj.setEmail(obj.getEmail());
 		newObj.setName(obj.getName());
 
-	}
+	}}
 
-}
