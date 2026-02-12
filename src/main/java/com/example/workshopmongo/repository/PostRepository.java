@@ -10,5 +10,7 @@ import java.util.List;
 //aula 355 07/2/2026
 @Repository
 public interface PostRepository  extends MongoRepository<Post, String>{
+	
+ public List<Post> findByTitleContainingIgnoreCase(String txt);
 
 }

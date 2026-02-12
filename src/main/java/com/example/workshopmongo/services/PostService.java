@@ -4,14 +4,10 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
 import org.springframework.stereotype.Service;
 
 import com.example.workshopmongo.domain.Post;
-import com.example.workshopmongo.domain.User;
-import com.example.workshopmongo.dto.UserDTO;
 import com.example.workshopmongo.repository.PostRepository;
-import com.example.workshopmongo.repository.UserRepository;
 import com.example.workshopmongo.services.exception.ObjectNotFoundException;
 
 //aula 347 - 03-02-2026
@@ -28,4 +24,9 @@ public class PostService {
 			throw new ObjectNotFoundException("Objeto nao encontrado");
 		}
 		return post.get();}
+	
+// aula 361 11/02/2026
+	public List<Post> findByTitle(String txt){
+	return repo.findByTitleContainingIgnoreCase(txt);
+}
 }
