@@ -34,6 +34,11 @@ public class PostResource {
 		List<Post> listaPost = service.findByTitle(txt);
 		return ResponseEntity.ok().body(listaPost);
 	}
-	
-
-}
+	@GetMapping (value = "/bodysearch")
+	public ResponseEntity<List<Post>> procurarNoCorpo(@RequestParam (value= "txt", defaultValue = "") String txt,
+			@RequestParam (value= "txt2", defaultValue = "")String txt2){
+		txt = URL.decodeParam(txt);
+		txt2 = URL.decodeParam(txt2);
+		List<Post> listPost = service.findbyAutorAndTitle(txt, txt2);
+		return ResponseEntity.ok().body(listPost);
+}}

@@ -33,15 +33,16 @@ public class Instatiation implements CommandLineRunner  {
 		User alex = new User("Alex green", null, "alex@gmail.com");
 		userRepo.deleteAll();
 		postRepo.deleteAll();
-		userRepo.saveAll(Arrays.asList(maria, alex));
+	 userRepo.saveAll(Arrays.asList(maria, alex));
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 		sdf.setTimeZone(TimeZone.getTimeZone("GMT"));
 		
-		Post post1 = new Post(null, sdf.parse("21/03/2018"),"Partiu viagem", "vou viajar para São Paulo.Abraços!", new AutorDto(maria));
-		Post post2= new Post(null, sdf.parse("23/03/2018"), "Bom dia", "acordei feliz hoje!", new AutorDto( maria));
-		
-		postRepo.saveAll(Arrays.asList(post1, post2));
+	 Post post1 = new Post(null, sdf.parse("21/03/2018"),"Partiu viagem", "vou viajar para São Paulo.Abraços!", new AutorDto(maria));
+		 Post post2= new Post(null, sdf.parse("23/03/2018"), "Bom dia", "acordei feliz hoje!", new AutorDto( maria));
+		Post post3 = new Post(null, sdf.parse("16/02/2026"), "Boa noite", "partiu estudar Java com SpringBoot", new AutorDto(alex));
+		postRepo.saveAll(Arrays.asList(post3, post1, post2));
 		maria.getPosts().addAll(Arrays.asList(post1, post2));
-		userRepo.save(maria);
+		alex.getPosts().addAll(Arrays.asList(post3));
+		userRepo.save(alex);userRepo.save(maria);
 	}
 }

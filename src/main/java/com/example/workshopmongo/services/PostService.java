@@ -29,4 +29,13 @@ public class PostService {
 	public List<Post> findByTitle(String txt){
 	return repo.findByTitleContainingIgnoreCase(txt);
 }
+	//aula 361 12/2/2026
+	public List<Post> findTitle(String txt){
+		return repo.searchTitle(txt);
+			}
+	
+// para pesquisar por Autor e Title
+	public List<Post>  findbyAutorAndTitle(String txt, String txt2){
+		return repo.findByAutorAndTitle(txt, txt2);
+	}
 }
